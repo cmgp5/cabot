@@ -103,7 +103,7 @@
        - Crearía una clase ProcedimientoValidator, donde se realizarían las validaciones necesarias para la clase 
          Procedimiento, es decir, verificar la integridad de los datos (Evitar caracteres indeseados), validación de tamaño
          de strings, validación de existencia de datos en las tablas a través de su id
-    - Como resultado se obtendría una lista errores y a cada uno de estos se le mapea un mensaje descriptivo en una lista
+       - Como resultado se obtendría una lista errores y a cada uno de estos se le mapea un mensaje descriptivo en una lista
        de mensajes, la cual será presentada al usuario en caso de que se presente algún tipo de excepción o error
 ### Patrones de diseño usados
     1. Modelo Vista Controlador
