@@ -32,7 +32,7 @@
           tabla ‘tipos_procedimiento’
 ### Diseño
 #### - Modelo 
-    1.  Para configurar el WebApplicationContext usaría el patrón Front Controller en el fichero web.xml
+    1. Para configurar el WebApplicationContext usaría el patrón Front Controller en el fichero web.xml
     2. Configuraría el DispatcherServlet que manejaría la resolución de url a través de un fichero xml de configuración de 
        un View Resolver, direccionando los jsp a un directorio de vistas a través de la propiedad prefix y la terminación 
        de las mismas a la extensión .jsp con la propiedad suffix
@@ -61,23 +61,24 @@
     4. Esta respuesta se mapearía a la vista para ser accedida a través de etiquetas de Expression Language o de anotaciones 
        JSTL.
 #### - Vista
-    1. Crearía un fichero JSP en donde desplegaría una tabla con las siguientes propiedades
-    2. Sobre la tabla ubicaría un botón para crear un nuevo procedimiento que llevaría a un nuevo JSP en donde se desplegaría 
+    1. Agregaria un servidor de aplicaciones (JBoss) donde pueda desplegar la aplicacion web
+    2. Crearía un fichero JSP en donde desplegaría una tabla con las siguientes propiedades
+    3. Sobre la tabla ubicaría un botón para crear un nuevo procedimiento que llevaría a un nuevo JSP en donde se desplegaría 
        un formulario con los siguientes campos:
         - Autos del procedimiento
         - Nombre del Juzgado (Select cargado desde la tabla Juzgados)
         - Tipo de Procedimiento (Select cargado desde la tabla Tipos de Procedimiento)
         - Botón Guardar, que a través del servicio ProcedimientoService guardaría el nuevo procedimiento en la base de datos
         - Botón Cancelar que retornaría al JSP Principal
-    3. En el encabezado de la tabla, bajo los títulos de la columnas crearía unos filtros para realizar una búsqueda en 
+    4. En el encabezado de la tabla, bajo los títulos de la columnas crearía unos filtros para realizar una búsqueda en 
        la tabla de la siguiente manera:
         - Id del procedimiento, campo de texto
         - Autos del procedimiento, campo de texto
         - Nombre del Juzgado, Select
         - Tipo de Procedimiento, Select
-    4. Cada fila mostraría la información de cada uno de los procedimientos judiciales (Nombre del procedimiento, Autos del 
+    5. Cada fila mostraría la información de cada uno de los procedimientos judiciales (Nombre del procedimiento, Autos del 
        procedimiento, Nombre del Juzgado y de manera opcional el Tipo de Procedimiento
-    5. Al final de cada fila se ubicaría un botón que editaría la información del proceso, al presionar este botón, se 
+    6. Al final de cada fila se ubicaría un botón que editaría la información del proceso, al presionar este botón, se 
        redireccionara al mismo JSP usado para crear un nuevo procedimiento, pero en los campos del formulario estarán 
        precargados los datos del procedimiento que se pretende editar, así reusaría este JSP
 #### - Servicios
