@@ -8,7 +8,7 @@
     - javax.servlet.jsp (javax.servlet.jsp-api)
     - org.projectlombok(lombok)
 ## FASE 1
-#### - Pseudocódigo Script SQL
+### - Pseudocódigo Script SQL
     1. Crear la base de datos ‘procedimientosdb’
     
     2. Crear la tabla ‘juzgados’ con las siguientes columnas
@@ -53,14 +53,14 @@
     10. Crearía la clase ‘TipoProcedimiento’ con la anotación JPA @Entity y que creara instancias mapeadas a las columnas de 
         la tabla ‘tipos_procedimientos’. Para esta clase implementaría el patrón de creación Builder
 
-### - Controlador
+#### - Controlador
     1. Crearía el controlador ‘ProcedimientoController’, con la anotación @Controller, aquí realizaría el mapeo que realizaría
        las siguientes tareas
     2. Redireccionaría las peticiones REST a cada uno de los servicios
     3. Recibiría la respuesta de dichos servicios después de hacer una Query en la base de datos
     4. Esta respuesta se mapearía a la vista para ser accedida a través de etiquetas de Expression Language o de anotaciones 
        JSTL.
-### - Vista
+#### - Vista
     1. Crearía un fichero JSP en donde desplegaría una tabla con las siguientes propiedades
     2. Sobre la tabla ubicaría un botón para crear un nuevo procedimiento que llevaría a un nuevo JSP en donde se desplegaría 
        un formulario con los siguientes campos:
@@ -80,7 +80,7 @@
     5. Al final de cada fila se ubicaría un botón que editaría la información del proceso, al presionar este botón, se 
        redireccionara al mismo JSP usado para crear un nuevo procedimiento, pero en los campos del formulario estarán 
        precargados los datos del procedimiento que se pretende editar, así reusaría este JSP
-### - Servicios
+#### - Servicios
     1. Crearía el servicio ProcedimientoService: Usado para instanciar la Interfaz ProcedimientoRepository, de esta manera
        se pueden invocar los métodos CRUD para consultar y actualizar la tabla procedimientos_judiciales
         - Método findAll, Realiza la consulta a la base de datos y trae todas las filas de la tabla
@@ -110,7 +110,7 @@
     2. Front Controller
     3. View Helper
     4.Builder
-#### Query Nativa para obtener procedimientos judiciales
+### Query Nativa para obtener procedimientos judiciales
 ```javascript
 public List<Procedimiento> selectAllProcedimientos(){
     EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("procedimientosdb");
@@ -161,27 +161,27 @@ public Procedimiento selectProcedimientoById(int id_procedimiento){
           ‘tipos_procedimiento’
 
 ### - Modificaciones Java
-### Modelo 
+#### Modelo 
     1. Crear una interface ‘SubTipoProcedimientoRepository’ que extendería la clase CrudRepository para la gestión de la 
        tabla ‘subtipos_ procedimiento’
     2. Crear la clase ‘SubTipoProcedimiento’ con la anotación JPA @Entity y que creara instancias mapeadas a las columnas de 
        la tabla ‘subtipos_ procedimiento’. implementando el patrón de creación Builder
-### Controlador
+#### Controlador
     1. Crear la petición GET para direccionar el tráfico bidireccional del servicio SubTiposProcedimientoService
-### Vista
+#### Vista
     1. En el fichero JSP principal en la tabla desplegada se crearía un campo nuevo que mostraría el Subtipo y su respectivo 
        filtro bajo el nombre de la columna en la cabecera de la tabla
     2. En el fichero JSP de creación/edición de cada procedimiento se implementaría un campo adicional para el subtipo de 
        procedimiento con un Select cargado desde la tabla subtipos_procedimiento y cuyo id_tipo_procedimiento sea igual al
        id_tipo_procedimiento del procedimiento seleccionado
-### Servicios
+#### Servicios
     1. Crear el servicio SubTiposProcedimientoService: Usado para instanciar la Interfaz SubTipoProcedimientoRepository, 
        para consultar la tabla subtipos_procedimientos
     2. Método findByIdTipoProcedimiento, Realiza la consulta a la base de datos y trae todas las filas de la tabla que 
        concuerden con el valor de id_tipo_procedimiento
 
 ## FASE 3
-### - Modificaciones ScriptSQL
+#### - Modificaciones ScriptSQL
     1. Crear la tabla ‘usuarios’ con las siguientes columnas
         - ‘id_usuario’ de tipo int con las propiedades NOT NULL y AUTO_INCREMENT
         - ‘usuario’ de tipo varchar con la propiedad NOT NULL
