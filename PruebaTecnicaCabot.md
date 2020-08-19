@@ -28,7 +28,8 @@
         - ‘id_tipo_procedimiento’ de tipo int
         - Poner la columna ‘id_procedimiento’ como PRIMARY KEY
         - Crear una Llave Foránea ‘fk_procedimientos_juzgados’ apuntando al campo ‘id_juzgado’ de la tabla ‘juzgados’
-        - Crear una Llave Foránea ‘fk_procedimientos_tipos_procedimiento’ apuntando al campo ‘id_tipo_procedimiento’ de la tabla ‘tipos_procedimiento’
+        - Crear una Llave Foránea ‘fk_procedimientos_tipos_procedimiento’ apuntando al campo ‘id_tipo_procedimiento’ de la 
+          tabla ‘tipos_procedimiento’
 ### Diseño
 #### - Modelo 
     1.  Para configurar el WebApplicationContext usaría el patrón Front Controller en el fichero web.xml
